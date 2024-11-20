@@ -9,6 +9,7 @@ let overlay = document.querySelector('.overlay');
 let overlay2 = document.querySelector('.overlay2');
 let overlay3 = document.querySelector('.overlay3');
 let overlayLog = document.querySelector('.overlay-log');
+const overlays = [overlay, overlay2, overlay3, overlayLog, sidebar];
 let sidebar2 = document.querySelector('.sidebar2');
 let navCart = document.querySelector('.nav-cart');
 let navVer = document.querySelector('.nav-ver');
@@ -20,8 +21,9 @@ let xIcon = document.querySelector('.x-icon');
 let xIcon2 = document.querySelector('.x-icon2');
 let xIcon3 = document.querySelector('.x-icon3');
 let xSpan = document.querySelectorAll('.x-span');
+const closeButton = document.querySelector('.close-button');
+const userIcon = document.querySelector('.user-icon');  
 
-let userIcon = document.querySelectorAll('.user')
 
 document.addEventListener("DOMContentLoaded", () => {
     // حدد العناصر التي تريد إضافة كلاس "hide" لها
@@ -107,11 +109,18 @@ userIcon.forEach(icon => {
 
 
 
+////////////////////*log in*////////////
 
-document.querySelector(".close-button").addEventListener("click", () => {
-    document.querySelector(".login-modal").style.right = "-350px";
-    overlayLog.classList.add('hide');
-  });
+userIcon.addEventListener('click', function(e) {
+    e.preventDefault();  
+    overlayLog.classList.remove('hide'); 
+});
+
+closeButton.addEventListener('click', function() {
+    overlayLog.classList.add('hide');  // إضافة الكلاس hide لإخفاء النافذة
+});
+
+
   
   // Example submit handler
   document.querySelector(".login-form").addEventListener("submit", (e) => {

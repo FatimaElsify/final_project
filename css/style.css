@@ -232,7 +232,7 @@ top: 11px;
 
 
 .hide{
-    display: none;
+    display: none !important;
 }
 
 
