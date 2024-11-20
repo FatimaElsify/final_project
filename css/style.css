@@ -213,6 +213,9 @@ top: 11px;
     border-top: 5px solid red;
 }
 
+
+
+
 /* start nav2 */
 .layer-nav{
     width: 100%;
@@ -222,15 +225,144 @@ top: 11px;
     z-index: 100;
     left: 0%;
     top: 0;
-    display: none;
+    /* display: none; */
 
+}
+
+
+
+.hide{
+    display: none;
+}
+
+
+
+.overlay , .overlay2 , .overlay3  , .overlay-log{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* display: none; */
+ /*البدايةمخفية*/
+  transition: opacity 0.3s ease;
+  z-index: 9998;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+}
+.overlay2{
+    z-index: 999;
+}
+
+.sidebar2{
+    z-index: 998;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: -350px; /* بداية موقعها خارج الشاشة */
+    width: 350px;
+    height: 100vh;
+    
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    
+    transition: right 0.3s ease-in-out; /* الحركة */
+    z-index: 9999;
+    flex-direction: column;
+    
+   
+    position: absolute;
+    height: 100vh;
+    background-color: #eee;
+    width: 350px;
+    padding-top: 20px;
+
+}
+.sidebar h3{
+    background-color: #e3dede;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    margin-right: 50px;
+    padding:20px 10px;
+    
+  }
+
+.sidebar2{
+    position: fixed;
+  top: 0;
+  left: -350px; /* يبدأ من اليسار خارج الشاشة */
+  width: 350px;
+  height: 100vh; /* طولها 100% من ارتفاع الشاشة */
+  background-color: #eee;
+  transition: left 0.3s ease; /* تأثير حركة الانتقال */
+   /* تأكد أنها تظهر فوق باقي المحتويات */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+  flex-direction: column;
+    padding:20px 0px ;
+   
+}
+.overlay.show {
+    display: block;  /* إظهار الـ overlay */
+    opacity: 1;
+}
+.sidebar.open {
+    left: 0; /* فتح الـ sidebar */
+  }
+  
+  .overlay.show {
+    display: block;
+    opacity: 1; /* إظهار الـ overlay */
+  }
+.open {
+    left: 0; /* فتح الـ sidebar */
+  }
+  .show {
+    display: block;
+    opacity: 1; /* إظهار الـ overlay */
+  }
+  .hide{
+    display: none;
+  }
+
+.menu{
+    padding: 0;
+}
+.nav-ver ul {
+    padding: 0;
+}
+
+.nav-ver ul li , .nav-ver h3 , .nav-ver .languages{
+    padding: 0px 10px;
 }
 .nav-ver , .lang-menu {
    
     flex-direction: column;
     padding:20px 0px ;
    
+    position: absolute;
+    height: 100vh;
+    background-color: #eee;
+    width: 350px;
 
+}
+.nav-ver .lang ,.nav-ver .sign ,.nav-ver .link{
+    margin-top: 30px;
+}
+.nav-ver .lang  {background-color:#e3dede;
+    padding: 10px 10px;
+
+}
+.nav-ver .languages a{
+    text-decoration: none;
+    color: black;
 }
 .aside{
     background-color: rgb(247, 248, 248);
@@ -242,8 +374,8 @@ top: 11px;
     width: 320px;
     height: 100vh; */
     display: flex;
-    justify-content: space-between;
-    left: -100px;
+    /* justify-content: space-between; */
+    /* left: -100px; */
 
 }
 .lang-menu{
@@ -318,17 +450,29 @@ top: 11px;
      }
 .lang-menu , .cart-menu{
     position: absolute;
-    right: 0;
+    right: -350px;
     top: 0;
    
 }
+
 /* start cart menu */
 
 .nav-cart{
-    right: 0px;
+    right: -350px;
     top: 0;
+    z-index: 9999;
+    padding: 15px;
     
-
+}
+.nav-cart.show {
+    right: 0; /* تعرض السلة عند الضغط على الأيقونة */
+}
+.close-cart {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
 }
 .aside{
     background-color: rgb(247, 248, 248);
@@ -340,7 +484,9 @@ top: 11px;
     position: absolute;
 }
 
-
+.nav-cart h3{
+    margin: 10px;
+}
 .nav-cart p{
     margin-left: 10px;
 }
@@ -352,6 +498,160 @@ top: 11px;
     font-weight: bold;
 }
   
+
+
+/*  log in part  */
+
+.login-modal {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    position: absolute;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    right: 0;
+    height: 100vh;
+    transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    -moz-transition: 0.3s all ease;
+    -ms-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+}
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+  }
+  
+  .close-button {
+    cursor: pointer;
+    font-size: 20px;
+    
+  }
+  
+  .login-form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffd600;
+    border: none;
+    
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #ffc107;
+  }
+  
+  .forgot-password {
+    display: block;
+    
+    color: black;
+    
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    width: fit-content;
+    margin:20px auto;
+  }
+  
+  .create-account {
+    margin-top: 20px;
+    text-align: center;
+    
+  }
+  .create-account h3{
+    background-color: #000000;
+    padding: 10px;
+    color: #ffc107;
+    font-size: 20px;
+  }
+  .social-button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    
+    cursor: pointer;
+    color: white;
+    
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .social-button.facebook {
+    background-color: #4267b2;
+    margin-top: 0;
+  }
+  
+  .social-button.google {
+    background-color: #db4437;
+  }
+  
+  .social-button.twitter {
+    background-color: #1da1f2;
+  }
+
+/* search part  */
+.overlay-result {
+    display: none; /* مخفية افتراضيًا */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* خلفية سوداء شفافة */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .results-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80%;
+    overflow-y: auto; /* للتمرير إذا كانت النتائج كثيرة */
+  }
+  
+  .results-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  #closeResults {
+    margin-bottom: 15px;
+  }
+
+
+
+
 /* ==============yosef part============== */
 
 /* body{
