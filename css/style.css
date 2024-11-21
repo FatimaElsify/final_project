@@ -19,6 +19,7 @@ nav {
     background-color: black !important;
     display: flex;
     flex-direction: row;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -70,6 +71,8 @@ button.navbar-toggler {
     margin: 10px;
     display: flex;
     justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav-cart p {
@@ -83,10 +86,12 @@ button.navbar-toggler {
     color: rgb(212, 202, 59);
     font-weight: bold;
     box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
 
+/* user part menu */
 /* user part menu */
 
 .login-modal {
