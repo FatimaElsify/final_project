@@ -74,3 +74,6 @@ closeBar.addEventListener('click', function(e){
     e.preventDefault(); 
     barMenu.classList.add('hide')});
 
+
+
+    
