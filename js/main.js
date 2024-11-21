@@ -76,4 +76,61 @@ closeBar.addEventListener('click', function(e){
 
 
 
+
+    // loging accounts
+    
+    // الحصول على عناصر النموذج
+    const loginForm = document.querySelector('.login-form');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const loginButton = document.querySelector('.login-button');
+    const userIcon = document.querySelector('.user a .fa-user');
+
+    // دالة التحقق من صحة البيانات المدخلة
+    function validateForm(email, password) {
+        if (!email || !password) {
+            alert('Please fill in all fields');
+            return false;
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return false;
+        }
+
+        // التحقق من كلمة السر 
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters');
+            return false;
+        }
+
+        return true;
+    }
+
+    // التعامل مع حدث التقديم
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // منع إرسال النموذج بشكل افتراضي
+
+        const email = emailInput.value;
+        const password = passwordInput.value;
+
+        if (validateForm(email, password)) {
+            const formData = {
+                email: email,
+                password: password
+            };
+
+            console.log('User Data:', formData);
+
+            setTimeout(() => {
+                alert('Successfully logged in!'); // رسالة نجاح
+                document.querySelector('.login-modal').classList.add('hide');
+                
+                if (userIcon) {
+                    userIcon.style.color = "green"; //تغيير اللون للأخضر
+                }
+            }, 1000); 
+        }
+    });
     
