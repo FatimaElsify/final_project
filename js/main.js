@@ -68,6 +68,9 @@ closeBar.addEventListener('click', function (e) {
     barMenu.classList.add('hide')
 })
 
+
+
+
 // get products
 let product = document.querySelector('.product')
 
