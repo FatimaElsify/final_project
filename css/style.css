@@ -92,7 +92,6 @@ button.navbar-toggler {
 .login-modal,
 .search-form,
 .bar-menu {
-    position: relative;
     z-index: 10;
 }
 
