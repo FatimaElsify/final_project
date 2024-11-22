@@ -70,11 +70,14 @@ closeBar.addEventListener('click', function (e) {
 
 // get products
 let product = document.querySelector('.product')
+console.log(product);
 
 async function getProducts() {
     let content = ''
 
     let response = await fetch('https://fakestoreapi.com/products')
+    console.log(response);
+    
     let products = await response.json()
     if (!response.ok) {
         throw new Error('HTTP error')
