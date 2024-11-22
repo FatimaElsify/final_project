@@ -12,13 +12,215 @@
 </head>
 
 <body>
+ <!--   start nav -->
+ <nav class="navbar navbar-expand-lg navbar-light  p-2 ">
+    <div class="container-fluid  ">
+      <!-- logo -->
+      <div class="logo">
+        <a class="navbar-brand text-light" href="#">TOWN TEAM</a>
+      </div>
 
+
+      <!-- links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="product.html">men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="product.html">kids</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="./product.html">all collections</a>
+          </li>
+        </ul>
+
+
+
+      </div>
+      <div class="d-flex ">
+        <ul class="d-flex text-light p-2 m-0">
+
+          <li class="s-glass me-3"><a class="text-light " href><i class="fa-solid fa-magnifying-glass ico"></i></a>
+
+          </li>
+
+          <li class="user me-3"><a href><i class="fa-regular fa-user ico text-light"></i></a></li>
+          <li><a class="shop-cart text-light" href><i class="fa-solid fa-cart-shopping ico"></i>
+
+              <!-- <span>0</span> -->
+            </a>
+          </li>
+
+        </ul>
+        <div class="bar-icon p-2">
+
+          <a href=""><i class="fa-solid fa-bars"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- menus for user and  cart  -->
+
+  <div class="nav-cart aside hide">
+    <h3 class>Shoping cart <span class="x-span"><i class="fa-solid fa-xmark x-icon"></i></span> </h4>
+
+      <p><span>0 Item</span></p>
+      <ul class="link">
+        <li><a href></a></li>
+
+      </ul>
+      <p>Free shipping foar all orders over LE 750.00!</p>
+
+      <p>your cart is empty</p>
+      <button class="cart-btn ">
+        CONTINUE SHOPPING
+      </button>
+
+  </div>
+
+  <!-- log in modal -->
+  <div class="login-modal aside hide" style="position: absolute; ">
+    <div class="modal-header">
+      <h2>Login</h2>
+      <span class="close-button close-icon"><i class="fa-solid fa-xmark"></i></span>
+    </div>
+    <form class="login-form">
+      <label for="email">Email Address <span>*</span></label>
+      <input type="email" id="email" placeholder="Email Address" required>
+
+      <label for="password">Password <span>*</span></label>
+      <input type="password" id="password" placeholder="Password" required>
+
+      <button type="submit" class="login-button">Log In</button>
+      <a href="#" class="forgot-password">Forgot your password?</a>
+    </form>
+
+    <div class="create-account">
+      <h3>Create Account</h3>
+      <button class="social-button facebook">Sign in with Facebook</button>
+      <button class="social-button google">Sign in with Google</button>
+      <button class="social-button twitter">Sign in with Twitter</button>
+    </div>
+  </div>
+
+  <!-- search form  -->
+  <div class="search-form aside hide " style="position: absolute; ">
+    <div class="searching d-flex justify-content-between">
+      <h2>Search</h2>
+      <span class="close-search"><i class="fa-solid fa-xmark"></i></span>
+    </div>
+
+    <form class="d-flex ">
+      <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-dark " type="submit">Search</button>
+    </form>
+
+  </div>
+
+
+  <!--drop menu of baricon of nav  -->
+  <div class="bar-menu aside hide ">
+
+    <h3 class="d-flex justify-content-between">Menu <span class="close-bar"><i class="fa-solid fa-xmark "></i></span>
+    </h3>
+    <ul class="links">
+      <li class="">
+        <a class="nav-link " href="product.html">men</a>
+      </li>
+      <li class="">
+        <a class="nav-link  " href="product.html">kids</a>
+      </li>
+      <li class="">
+        <a class="nav-link  " href="product.html">all collections</a>
+      </li>
+  </div>
     <!-- products -->
     <div class="container">
         <div class="row product">
 
         </div>
     </div>
+
+     <footer>
+    <div class="footer text-white d-flex flex-column align-items-center p-5 text-center">
+      <div class="news ">
+        <h5 class=" text-uppercase">SIGN-UP FOR TOWN TEAM newsletter</h5>
+        <p class="text-secondary mb-5">be the first to know about our newest arrivals, special offers and store events
+          near you.</p>
+        <form>
+          <div class="d-flex mb-5">
+            <input type="email" class="form-control me-2" required placeholder="Enter your email..">
+            <button type="submit" class="btn btn-submit ">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="links container mt-5">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="customerService">
+              <p>Customer Service</p>
+              <ul class="list-unstyled">
+                <li><a href="https://townteam.com/pages/town-team-terms-and-condition">Town Team Terms And Condition</a>
+                </li>
+                <li><a href="https://townteam.com/pages/town-team-privacy-policy">TOWN TEAM Privacy Policy</a></li>
+                <li><a href="https://townteam.com/pages/delivery-and-returns">Delivery And Returns</a></li>
+                <li><a href="https://townteam.com/policies/refund-policy">Terms of Service</a></li>
+                <li><a href="https://townteam.com/policies/refund-policy">Refund policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="about">
+              <p class="text-uppercase">About</p>
+              <ul class="list-unstyled">
+                <li><a href="https://townteam.com/pages/town-team-terms-and-condition">About TOWN TEAM</a></li>
+                <li><a href="https://townteam.com/pages/town-team-privacy-policy">How To Purchase</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="contact">
+              <p class="text-uppercase">contact us</p>
+              <ul class="list-unstyled">
+                <li><a href="https://townteam.com/pages/town-team-terms-and-condition">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="socialMedia">
+              <p>keep in touch</p>
+              <ul class="list-unstyled d-flex justify-content-center">
+                <li><a href="https://townteam.com/pages/town-team-terms-and-condition"><i
+                      class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://townteam.com/pages/town-team-terms-and-condition"><i
+                      class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://townteam.com/pages/town-team-terms-and-condition"><i
+                      class="fa-brands fa-tiktok"></i></a></li>
+                <li><a href="https://townteam.com/pages/town-team-terms-and-condition"><i
+                      class="fa-brands fa-youtube"></i></a></li>
+              </ul>
+            </div>
+            <div class="paymentMethods mt-5">
+              <p>payment accept</p>
+              <div class="payment d-flex">
+                <figure><img src="./image/icon-2.png" alt="payment-img"></figure>
+                <figure><img src="./image/icon-4.png" alt="payment-img"></figure>
+                <figure><img src="./image/icon-3.png" alt="payment-img"></figure>
+                <figure><img src="./image/men 5.webp" alt="payment-img"></figure>
+                <figure><img src="./image/icon-1.png" alt="payment-img"></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright text-center p-4">
+      © TOWN TEAM 2024
+    </div>
+  </footer>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

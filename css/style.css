@@ -88,6 +88,13 @@ button.navbar-toggler {
     box-sizing: border-box;
     box-sizing: border-box;
 }
+.nav-cart,
+.login-modal,
+.search-form,
+.bar-menu {
+    position: relative;
+    z-index: 10;
+}
 
 
 
