@@ -92,7 +92,6 @@ button.navbar-toggler {
 .login-modal,
 .search-form,
 .bar-menu {
-    position: relative;
     z-index: 10;
 }
 
@@ -360,11 +359,11 @@ ul.links {
     transition: all 2s;
 }
 
-
+/* 
 
 @media screen and (max-width:991px) {
     nav {}
-}
+} */
 
 @media screen and (min-width:992px) {
 
