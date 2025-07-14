@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchased Products</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/purchased.css">
+</head>
+<body style="background:#fafbfc;">
+  <div class="container py-4">
+    <h2 class="mb-4 text-center" style="font-weight:600;letter-spacing:1px;">Purchased Products</h2>
+    <div id="purchasedList" class="purchased-list-vertical"></div>
+    <div id="purchasedSummary"></div>
+    <div id="emptyMsg" class="alert alert-info text-center mt-4" style="display:none;">No products in your cart.</div>
+    <a href="product.html" class="btn btn-dark mt-4">Back to Shopping</a>
+  </div>
+  <script>
+    function renderPurchased() {
+      let cart = JSON.parse(localStorage.getItem('cartData') || '[]');
+      let listDiv = document.getElementById('purchasedList');
+      let summaryDiv = document.getElementById('purchasedSummary');
+      let emptyMsg = document.getElementById('emptyMsg');
+      if (!cart.length) {
+        listDiv.innerHTML = '';
+        summaryDiv.innerHTML = '';
+        emptyMsg.style.display = 'block';
+        return;
+      }
+      emptyMsg.style.display = 'none';
+      let total = cart.reduce((sum, item) => sum + (item.price || 0), 0);
+      let tax = total * 0.14;
+      let shipping = cart.length ? 5 : 0;
+      let grand = total + tax + shipping;
+      summaryDiv.innerHTML = `
+        <div class="summary-card">
+          <div class="details mb-2">Products count: <b>${cart.length}</b></div>
+          <div class="total mb-2">Total: <span>$${total.toFixed(2)}</span></div>
+          <div class="details">Tax (14%): <span>$${tax.toFixed(2)}</span></div>
+          <div class="details">Shipping: <span>$${shipping.toFixed(2)}</span></div>
+          <div class="total mb-2">Grand Total: <span>$${grand.toFixed(2)}</span></div>
+          <button class="pay-btn">Pay Now</button>
+        </div>
+      `;
+      let html = '';
+      cart.forEach((item, idx) => {
+        html += `<div class=\"purchased-card-horizontal\"><button class=\"remove-purchased\" data-idx=\"${idx}\"><i class=\"fa fa-trash\"></i> Remove</button><div class=\"purchased-card-details\"><h6 class=\"card-title\">${item.title}</h6><div class=\"card-text\">$${item.price}</div></div><img src=\"${item.img}\" alt=\"${item.title}\"></div>`;
+      });
+      listDiv.innerHTML = html;
+      document.querySelectorAll('.remove-purchased').forEach(btn => {
+        btn.onclick = function() {
+          let idx = parseInt(this.getAttribute('data-idx'));
+          cart.splice(idx, 1);
+          localStorage.setItem('cartData', JSON.stringify(cart));
+          renderPurchased();
+        }
+      });
+      // Pay button
+      let payBtn = document.querySelector('.pay-btn');
+      if(payBtn){
+        payBtn.onclick = function(){
+          alert('Payment successful! Thank you for your purchase.');
+          localStorage.setItem('cartData', '[]');
+          renderPurchased();
+        }
+      }
+    }
+    document.addEventListener('DOMContentLoaded', renderPurchased);
+  </script>
+</body>
+</html> 
